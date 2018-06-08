@@ -1,0 +1,10 @@
+# roles/cassandra/vars/main.yml
+---
+concourse:
+  local_archive: "{{ download_dir }}/{{ concourse_archive }}"
+  remote_archive: "{{ lookup('env','concourse_DOWNLOAD_PATH') | default(concourse_download_path, true) }}/{{ concourse_archive }}"
+  home_dir: "{{ base_home_dir }}/concourse"
+  conf_dir: "{{ base_conf_dir }}/concourse"
+  log_dir: "{{ base_log_dir }}/concourse"
+  lib_dir: "{{ base_lib_dir }}/concourse"
+  run_dir: "{{ base_run_dir }}/concourse"
